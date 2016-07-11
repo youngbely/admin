@@ -1,0 +1,212 @@
+<!Doctype html>
+<html style="height: auto">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv=Content-Type>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php echo $title; ?></title>
+    <link href="<?php echo $rk_assets_url; ?>css/rk.css" rel="stylesheet" type="text/css">
+    <script src="http://221.232.160.243/webappadmin/index.php?m=Home&c=Index&a=rkCount&typeid=<?php echo $data['rkinfo']['type'];?>"></script>
+    <script language="javascript">
+        var rkdate = "<?php echo $data['rkinfo']['createtime']?>";
+        var typeid = "<?php echo $data['rkinfo']['type']?>";
+        if(document.charset){
+            var cs = document.charset.toLowerCase();
+            if(!(cs=="utf-8") )
+            {
+                window.location.href="http://221.232.160.243/bolanadmin/home/index.php?a=gethis&time="+rkdate+"&type="+typeid;
+            }
+        }else if(document.characterSet){
+            var ccs = document.characterSet.toLowerCase();
+            if(!(ccs=="utf-8") )
+            {
+                window.location.href="http://221.232.160.243/bolanadmin/home/index.php?a=gethis&time="+rkdate+"&type="+typeid;
+            }
+        }
+        //document.oncontextmenu=function(e){return false;};
+        //document.onselectstart=function(e){return false;};
+    </script>
+    <script src="<?php echo $rk_assets_url; ?>js/jquery-1.4.4.min.js"></script>
+    <script src="<?php echo $rk_assets_url; ?>js/WdatePicker.js"></script>
+    <script>
+        var rkType="<?php echo $_GET['type']; ?>";
+        var rk_url = 'http://221.232.160.243/customer/index.php?m=Home&c=Index&a=viewRk';
+        var rk_content_url="<?php echo $rk_content_url; ?>";
+        function newDate(str) {
+            str = str.split('-');
+            var date = new Date();
+            date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+            date.setUTCHours(0, 0, 0, 0);
+            return date;
+        }
+        function getHisRk(selDate){
+            var time = newDate(selDate);
+            var date = (time.getTime() / 1000) * 888;
+            var type = (parseInt(rkType) + 8) * 888;
+            var f = date + 888;
+            var e = type + 888;
+            window.location.href = rk_url+'&b='+date+'&f='+f+'&d='+type+'&e='+e;
+        }
+        function selDate()
+        {
+            WdatePicker({el:'demospan',skin:'twoer',onpicked:function(dp){getHisRk(dp.cal.getNewDateStr());}})
+        }
+        var isShow=false;
+        var upImg=new Image;
+        upImg.src="<?php echo $rk_assets_url; ?>images/up.png";
+        var downImg=new Image;
+        downImg.src="<?php echo $rk_assets_url; ?>images/down.png" ;
+        function showOrCloseDir()
+        {
+            if (!isShow)
+            {
+                $("#bdshare_l").show();
+            }else
+            {
+                $("#bdshare_l").hide();
+            }
+            isShow=!isShow;
+        }
+
+        $(function(){
+            var zbdpH = $('.mainitem').height() + 30 + 30;
+            window.onscroll = function(){
+                if($(document).scrollTop() > zbdpH){
+                    $('.down').css({display:'none'});
+                }else{
+                    $('.down').css({display:'block'});
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+<FORM id="userFrm" name="userFrm" ><INPUT id="UserRight" value="3" type="hidden" name="UserRight"></FORM>
+<!--header -->
+<div class="header">
+    <div class="up" ><div class="lefttxt">*影响中国政策*</div><div class="righttxt"><span id="demospan" style="display:none;"></span>
+        <img  onclick="selDate()" style="vertical-align:middle;"  src="<?php echo $rk_assets_url; ?>images/ckwq.png"  align="absmiddle" />&nbsp;<span style="vertical-align:middle;color: #999;cursor:pointer;" onclick="selDate()">查看往期</span></div><div style="clear:both;"></div></div>
+    <div class="down">
+        <div class="downimg">
+            <img style="float:left;margin-top: 5px" src="<?php echo $rk_assets_url; ?>images/<?php echo $_GET['type']; ?>.png" >
+            <div style="float:left;margin-top: 28px;color: #7d7d7d;font-family: '楷体';font-size: 18px">第<?php echo $data["rkinfo"]["term"] ?>期 <?php echo $data["rkinfo"]["createtime"]?><?php echo $words?></div>
+            <div style="float: right;margin-top: 28px;color: #ff8c7b;font-family: '楷体';font-size: 18px"><?php echo $typeinfo;?></div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+<!--header -->
+<div style="background-color: #7a7a7a;margin-top: 105px;padding: 10px 0" >
+    <!--left -->
+    <div class="main">
+        <!--mainitem -->
+        <div class="mainitem" >
+            <div class="top"><div class="block"></div><h2 style="padding-left: 100px;color:rgb(51,51,51)">主编点评</h2></div>
+            <div class="bqzb" >【本期主编】：<?php echo $data["zbdp"]["bqzb"] ?></div>
+            <div class="line-gray" ></div>
+            <div class="content"><p style="font-family: '宋体';"><?php echo $data["zbdp"]["content"] ?></p></div>
+        </div>
+        <!--mainitem -->
+        <?php foreach($data["rkres"] as $key=>$val){ ?>
+        <!--item -->
+
+        <div class="item" >
+            <div class="cat">
+                <img style="float: left" src="<?php echo $rk_assets_url; ?>images/catbg01.gif">
+                <div style="float: left;background-color: #e8351a;padding: 0px 3px"><?php echo $key;?></div>
+                <img style="float: left" src="<?php echo $rk_assets_url; ?>images/catbg02.gif">
+                <div style="clear: both"></div>
+            </div>
+            <div class="line-red" ></div>
+
+            <?php $i=0;$c=count($val)-1;foreach($val as $r){?>
+            <div class="article" style="padding-bottom:10px;">
+                <div style="line-height:30px;">
+                    <a name="anchor<?php echo $r['id']; ?>" id="anchor<?php echo $r['id']; ?>" class="target-fix" style=" margin-top:-400px" > <div class="colorblock"></div><h2 style="color:rgb(10,56,102);padding-left: 100px;"><?php echo $r["title"] ?></h2></a>
+                </div>
+                <div class="yjy">【研究员】：<?php echo $r["yjy"] ?></div>
+                <div class="box"><p><?php echo $r["description"]; ?></p></div>
+
+                <!--summary -->
+                <!--<div class="summary" id="summary<?php echo $r['id']; ?>">
+                    <?php if($r["thumb"]) {?>
+                    <img src="<?php echo $r['thumb']?>" style="float:left; margin-right: 10px; width: 280px; height:200px;" />
+                    <?php }?>
+                    <p><?php echo $r["description"] ?></p>
+                </div>
+                <div style="clear: both;"></div>
+                <div  id="warp<?php echo $r['id']; ?>" style=" height: 40px; line-height: 40px; float: right; margin-right: 20px; margin-top: 10px;">
+                    <div id="loading<?php echo $r['id']; ?>" style="display:none;" >
+                        <img src="<?php echo $rk_assets_url; ?>images/loading.gif" />数据加载中，请稍候....
+                    </div>
+                    <div id="cc<?php echo $r['id']; ?>" >
+                        <a href="javascript:getContent('<?php echo $r['id']; ?>')" ><img style="vertical-align:middle;" src="<?php echo $rk_assets_url; ?>images/zk.png" />&nbsp;<span style="vertical-align:middle;color:#09F; font-family:'宋体'">展开文章</span></a>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>-->
+                <div class="content" style="margin-bottom:10px;" id="content<?php echo $r['id']; ?>" >
+                    <?php echo $r['content']?>
+                </div>
+            </div>
+            <!--summary -->
+            <?php
+				if ($i<$c){
+				?>
+            <div class="line-gray"></div>
+            <?php
+                  }
+				?>
+            <?php
+				  $i++;
+				 } 
+				 ?>
+        </div>
+        <!--item -->
+        <?php }?>
+    </div>
+    <!--left -->
+</div>
+
+<div class="footer ">
+    <table  border="0" align="center" cellpadding="3" cellspacing="0" style="font-size:14px" >
+        <tr>
+            <td width="705"><h5 style="color:#FFF; margin-bottom:4px; margin-left:-5px;">【申明】：</h5>
+                <p style="  font-family:宋体; font-size:12px; color:#FFF; line-height:25px;">
+                    凡注明“博览财经分析”、“博览财经研报”、“博览财经观察”均为博览财经独家原创；注明“博览财经消息”、“博览财经报道”均是博览分析员对公开信息的选择性去粗取精，挖掘信息中有价值的情报，不能等同新闻传媒。凡注明“博览财经特稿”的文章，是博览财经承接原作者拟表达的原意的基础上进行了汇编与整理，请原作品作者与我司联系稿酬。无论原创或提炼的研究资讯，在研究分析、提炼过程中，所引用或注明的全部或部分公开信息，博览财经只保证其来源的客观性，对引用公开信息的客观真实性、准确性和完整性不作任何保证。客户有权索取全文信息来源。对接触到本内容的对象所做决策，不承担任何责任。</p></td>
+            <td width="1" align="center" valign="middle"><div style="height:150px; width:1px; background-color: #E6E6E6"></div></td>
+            <td colspan="2" align="left" valign="middle"><table width="376" cellpadding="1" cellspacing="3">
+                <tr>
+                    <td width="65" align="right"><span style="color:#FFF;">制作：</span></td>
+                    <td width="296"><span style="color:#FFF;">武汉博览财经金融服务股份有限公司</span></td>
+                </tr>
+                <tr>
+                    <td align="right"><span style="color:#FFF;">电话：</span></td>
+                    <td><span style="color:#FFF;">027-87780070&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;027-87800686</span></td>
+                </tr>
+                <tr>
+                    <td align="right"><span style="color:#FFF;">Email：</span></td>
+                    <td><span style="color:#FFF;">bolan@bolaninfo.com</span></td>
+                </tr>
+            </table></td>
+        </tr>
+    </table>
+    <div ></div>
+</div>
+
+
+<div id="bdshare" style="right: 0px; top: 200px; position: fixed; height: 480px; overflow: hidden;">
+    <img src="<?php echo $rk_assets_url; ?>images/dir.gif" alt="" style="float:left;margin-top:150px;" onClick="showOrCloseDir()">
+    <div id="bdshare_l" style="display: none; float:left;">
+        <?php foreach($data["rkres"] as $key=>$val){ ?>
+        <h3 style="font-family:宋体;font-size: 14px;color: #a3a3a3;padding-left: 0">【<?php echo $key;?>】</h3>
+        <ul>
+            <?php foreach($val as $r){?>
+            <li style="font-family:宋体;font-size: 14px;line-height: 24px"><a style="color: #707070" href="#anchor<?php echo $r['id']; ?>" ><span style="margin-right: 10px">◆</span><?php echo $r["title"] ?></a></li>
+            <?php }?>
+        </ul>
+        <div class="line-gray" style="margin: 10px auto"></div>
+        <?php }?>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+</body>
+</html>

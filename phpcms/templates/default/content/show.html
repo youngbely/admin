@@ -1,0 +1,26 @@
+{template "content","header"}
+<style>
+.col-left{};
+</style>
+<div class="main">
+	<div>
+    	
+        <div id="Article" style="border: 0px solid #C3D4E7;">
+        	<h1>{$title}<br />
+<span>{$inputtime}&nbsp;&nbsp;&nbsp;</h1>
+			{if $description}<div class="summary" >{$description}</div>{/if}
+			<div class="content">
+            {$content}
+			
+			</div>
+
+		
+     
+      
+     
+</div>
+   
+</div>
+
+
+{template "content","footer"}

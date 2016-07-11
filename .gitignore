@@ -1,0 +1,5 @@
+.idea
+uploadfile/
+rk/
+caches/configs/database.php
+caches/error_log.php

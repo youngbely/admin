@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title>PHPCMS演示站</title>
+<meta name="keywords" content="PHPCMS演示站">
+<meta name="description" content="PHPCMS演示站">
+<link href="http://localhost/bolan/statics/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="http://localhost/bolan/statics/css/default_blue.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="http://localhost/bolan/statics/js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="http://localhost/bolan/statics/js/jquery.sgallery.js"></script>
+<style type="text/css">
+.special-bg{ background-color:#fff; width:960px; margin:auto; padding:0 6px}
+.z table td{ padding:0}
+</style>
+</head>
+<body class="special-channel">
+<div class="body-top special-body-top">
+    <div class="content">
+    	<a href="" class="logo"><img src="http://localhost/bolan/statics/images/v9/logo.jpg" height="30" /></a><div class="nav"><a href="http://localhost/bolan">首页</a><span>|</span><a href="http://localhost/bolan">个人客户端</a><span>|</span><a href="http://localhost/bolan/index.php?m=content&c=index&a=lists&catid=6">金融谍报在线</a></div>
+    </div>
+	</div>
+<div class="special-bg">
+<div class="header">
+<img src="11" width="954" />
+</div><div class="bk10"></div><div class="main">
+	<div class="crumbs"><a href="">首页</a><span> &gt; </span> <a href="http://localhost/bolan/index.php?m=special&c=index&a=special">专题</a> <span> &gt; </span> <a href="http://localhost/bolan/html/special/dd/">1111</a> </div>
+    <div class="box">
+        <h5>dd</h5>
+        <div class="content">
+		            <ul class="list f14 lh26 row-2">
+			                <li>·<a href="http://localhost/bolan/html/special/2015/0410/1.html" target="_blank">ddddd</a></li>
+				            </ul>
+        </div>
+		<div id="pages" class="text-c"></div>
+		    </div>
+</div> 
+<div class="footer">
+<p class="info">
+<a href="http://localhost/bolan/index.php?m=link" target="_blank">友情链接</a>
+<br />
+Powered by <strong><a href="http://www.phpcms.cn" target="_blank">PHPCMS</a></strong> <em>V9.5.9</em> &copy; 2011 <img src="http://localhost/bolan/statics/images/copyright.gif"/></p>
+</div>
+<script type="text/javascript">
+$(function(){
+	$(".picbig").each(function(i){
+		var cur = $(this).find('.img-wrap').eq(0);
+		var w = cur.width();
+		var h = cur.height();
+	   $(this).find('.img-wrap img').LoadImage(true, w, h,'http://localhost/bolan/statics/images/msg_img/loading.gif');
+	});
+})
+</script>
+</body>
+</html>
