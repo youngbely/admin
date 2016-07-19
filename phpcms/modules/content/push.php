@@ -39,7 +39,7 @@ class push extends admin {
 			if($action == '1')//移除
 			{
 				$idStr = implode(',',$ids);
-				$where = "atid in ('".$idStr."') and modid = 1 and catid = ".$currCatid;
+				$where = "atid in ($idStr) and modid = 1 and catid = ".$currCatid;
                 $db->delete($where);
 			}
 			if(is_array($ids)) {
