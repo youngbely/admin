@@ -101,7 +101,7 @@
         <!--mainitem -->
         <div class="mainitem" >
             <div class="top"><div class="block"></div><h2 style="padding-left: 100px;color:rgb(51,51,51)">主编点评</h2></div>
-            <div class="bqzb" >【本期主编】：<?php echo $data["zbdp"]["bqzb"] ?></div>
+            <div class="bqzb" >【本期主编】：<?php echo $data["zbdp"]["bqzb"] ?><a target="_blank" href="http://www.niubon.com"><img style="float:right;margin-top:-43px; margin-right:120px;" src="http://www.niubon.com/Public/images/clogo.png" ></a></div>
             <div class="line-gray" ></div>
             <div class="content"><p style="font-family: '宋体';"><?php echo $data["zbdp"]["content"] ?></p></div>
         </div>
@@ -161,6 +161,7 @@
         </div>
         <!--item -->
         <?php }?>
+        <a target="_blank" href="http://group.niubon.com/index/group/id/72.html"><img style=" width:1281px;" src="http://www.niubon.com/Uploads/Picture/2016-05-09/banner.jpg" ></a>
     </div>
     <!--left -->
 </div>

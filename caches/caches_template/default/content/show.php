@@ -10,7 +10,7 @@
 <span><?php echo $inputtime;?>&nbsp;&nbsp;&nbsp;</h1>
 			<?php if($description) { ?><div class="summary" ><?php echo $description;?></div><?php } ?>
 			<div class="content">
-            <?php echo $content;?>
+            &nbsp;&nbsp;&nbsp;&nbsp;<?php echo $content;?>
 			
 			</div>
 
