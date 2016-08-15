@@ -34,7 +34,7 @@ class Legend {
      // We need a separate margin since the baseline of the last text would coincide with the bottom otherwise
     private $ybottom_margin = 8;
     
-    private $xpos=0.05, $ypos=0.15, $xabspos=312, $yabspos=395;
+    private $xpos=0.05, $ypos=0.15, $xabspos=285, $yabspos=415;
     private $halign="right", $valign="top";
     private $font_color='black';
     private $hide=false,$layout_n=1;
