@@ -7,11 +7,11 @@
  * <p style="text-align: center;"><img src="http://221.232.160.243/bolanadmin/admin/uploadfile/2016/0530/20160530034622323.jpg"/></p>
  */
 //FIXME：测试环境
-//require_once 'functiondev.php';
-//$img_pre_path = "/bolanadmin/admind/admin/uploadfile/transaction/";
+require_once 'functiondev.php';
+$img_pre_path = "/bolanadmin/admind/admin/uploadfile/transaction/";
 //FIXME：正式环境
-require_once 'function.php';
-$img_pre_path = "/bolanadmin/admin/uploadfile/transaction/";
+//require_once 'function.php';
+//$img_pre_path = "/bolanadmin/admin/uploadfile/transaction/";
 
 $pre_path = "../uploadfile/transaction/";
 //header('content-type:text/html;charset=utf-8');
@@ -96,7 +96,7 @@ function trans($top, $filed1, $filed2, $filed3, $filed4, $table, $where, $order,
     if(!empty($data)) {
         //打乱数组
         $datas = array_keys($data);
-        shuffle($datas);
+//        shuffle($datas);
         foreach ($datas as $v) {
             $new_data[] = abs($data[$v]);
             $new_xdata[] = $xdata[$v];
@@ -264,7 +264,7 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph14', 'zjlxjrph', $w
  * zjlxjrph03 股票名称
  * zjlxjrph06 今日主力净流入净额
  * */
-$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(10,2))>0 and zjlxjrph02 like '6%'";
+$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(15,2))>0 and zjlxjrph02 like '6%'";
 trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph06', 'zjlxjrph', $where, 'zjlxjrph06', $pre_path, $img_pre_path, 3788, '收盘沪市机构资金净流入排行', '机构流入', 'red' ,'desc');
 
 /*
@@ -273,7 +273,7 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph06', 'zjlxjrph', $w
  * zjlxjrph03 股票名称
  * zjlxjrph06 今日主力净流入净额
  * */
-$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(10,2))<0 and zjlxjrph02 like '6%'";
+$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(15,2))<0 and zjlxjrph02 like '6%'";
 trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph06', 'zjlxjrph', $where, 'zjlxjrph06', $pre_path, $img_pre_path, 3788, '收盘沪市机构资金净流出排行', '机构流出', '#037000' ,'asc');
 
 /*
@@ -282,7 +282,7 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph06', 'zjlxjrph', $w
  * zjlxjrph03 股票名称
  * zjlxjrph06 今日主力净流入净额
  * */
-$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(10,2))>0 and (zjlxjrph02 like '0%' or zjlxjrph02 like '3%')";
+$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(15,2))>0 and (zjlxjrph02 like '0%' or zjlxjrph02 like '3%')";
 trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph06', 'zjlxjrph', $where, 'zjlxjrph06', $pre_path, $img_pre_path, 3788, '收盘深市机构资金净流入排行', '机构流入', 'red' ,'desc');
 
 /*
@@ -291,6 +291,6 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph06', 'zjlxjrph', $w
  * zjlxjrph03 股票名称
  * zjlxjrph06 今日主力净流入净额
  * */
-$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(10,2))<0 and (zjlxjrph02 like '0%' or zjlxjrph02 like '3%')";
+$where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and cast(zjlxjrph06 as numeric(15,2))<0 and (zjlxjrph02 like '0%' or zjlxjrph02 like '3%')";
 trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph06', 'zjlxjrph', $where, 'zjlxjrph06', $pre_path, $img_pre_path, 3788, '收盘深市机构资金净流出排行', '机构流出', '#037000' ,'asc');
 

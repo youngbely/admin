@@ -86,7 +86,8 @@ define("FF_FONT2",4);
 // Actual name of the TTF file used together with FF_CHINESE aka FF_BIG5
 // This is the TTF file being used when the font family is specified as
 // either FF_CHINESE or FF_BIG5
-define('CHINESE_TTF_FONT','msyh.ttf');
+//define('CHINESE_TTF_FONT','msyh.ttf');
+define('CHINESE_TTF_FONT','simhei.ttf');
 
 // Special unicode greek language support
 define("LANGUAGE_GREEK",false);

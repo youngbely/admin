@@ -7,11 +7,11 @@
  * <p style="text-align: center;"><img src="http://221.232.160.243/bolanadmin/admin/uploadfile/2016/0530/20160530034622323.jpg"/></p>
  */
 //FIXME：测试环境
-//require_once 'functiondev.php';
-//$img_pre_path = "/bolanadmin/admind/admin/uploadfile/transaction/";
+require_once 'functiondev.php';
+$img_pre_path = "/bolanadmin/admind/admin/uploadfile/transaction/";
 //FIXME：正式环境
-require_once 'function.php';
-$img_pre_path = "/bolanadmin/admin/uploadfile/transaction/";
+//require_once 'function.php';
+//$img_pre_path = "/bolanadmin/admin/uploadfile/transaction/";
 
 $pre_path = "../uploadfile/transaction/";
 //header('content-type:text/html;charset=utf-8');
@@ -95,7 +95,7 @@ function trans($top, $filed1, $filed3, $filed4, $table, $where, $order, $pre_pat
     if(!empty($data)) {
         //打乱数组
         $datas = array_keys($data);
-        shuffle($datas);
+//        shuffle($datas);
         foreach ($datas as $v) {
             $new_data[] = abs($data[$v]);
             $new_xdata[] = $xdata[$v];
@@ -145,20 +145,21 @@ function trans($top, $filed1, $filed3, $filed4, $table, $where, $order, $pre_pat
 
 
 /*
- * 行业主力资金流向排行 XX日行业主力资金流入排行(标题) 表：fundflowz_ahy
+ * 行业主力资金流向排行 XX日午盘行业主力资金流入排行(标题) 表：fundflowz_ahy
  * fundflowz_ahy01 日期
  * fundflowz_ahy02 行业名称
  * fundflowz_ahy29 主力资金
  * */
 $where = "fundflowz_ahy01 = (select max(fundflowz_ahy01) from fundflowz_ahy) and fundflowz_ahy29>0";
-trans(10, 'fundflowz_ahy01', 'fundflowz_ahy02', 'fundflowz_ahy29', 'fundflowz_ahy', $where, 'fundflowz_ahy29', $pre_path, $img_pre_path, 3691, '行业主力资金流入排行', '行业流入（单位：万元）', 'red', 'desc');
+trans(10, 'fundflowz_ahy01', 'fundflowz_ahy02', 'fundflowz_ahy29', 'fundflowz_ahy', $where, 'fundflowz_ahy29', $pre_path, $img_pre_path, 3691, '午盘行业主力资金流入排行', '行业流入（单位：万元）', 'red', 'desc');
 
 /*
- * 行业主力资金流向排行 XX日行业主力资金流出排行(标题) 表：fundflowz_ahy
+ * 行业主力资金流向排行 XX日午盘行业主力资金流出排行(标题) 表：fundflowz_ahy
  * fundflowz_ahy01 日期
  * fundflowz_ahy02 行业名称
  * fundflowz_ahy29 主力资金
  * */
 $where = "fundflowz_ahy01 = (select max(fundflowz_ahy01) from fundflowz_ahy) and fundflowz_ahy29<0";
-trans(10, 'fundflowz_ahy01', 'fundflowz_ahy02', 'fundflowz_ahy29', 'fundflowz_ahy', $where, 'fundflowz_ahy29', $pre_path, $img_pre_path, 3691, '行业主力资金流出排行', '行业流出（单位：万元）', '#037000', 'asc');
+trans(10, 'fundflowz_ahy01', 'fundflowz_ahy02', 'fundflowz_ahy29', 'fundflowz_ahy', $where, 'fundflowz_ahy29', $pre_path, $img_pre_path, 3691, '午盘行业主力资金流出排行', '行业流出（单位：万元）', '#037000', 'asc');
+
 

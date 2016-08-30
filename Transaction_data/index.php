@@ -36,7 +36,7 @@ function bar($data, $xdata, $title, $text, $color, $angle, $path='')
 //    $xdata = array('第斯蒂芬', '方斯蒂芬', '方斯蒂芬', '方斯蒂芬', '方斯蒂芬', '方斯蒂芬', '方斯蒂芬', '方斯蒂芬', '方斯蒂芬', '第三芬斯', '第三芬斯', '第斯蒂芬', '第三方芬', '蒂蒂芬', '蒂芬蒂芬');
 
     //创建背景图
-    $graph = new Graph(700, 450);
+    $graph = new Graph(700, 435);
     //设置刻度样式
     $graph->SetScale("textlin");
     //设置边界范围
@@ -66,7 +66,8 @@ function bar($data, $xdata, $title, $text, $color, $angle, $path='')
     // 定位 x 轴标注垂直位置应在最下方
     $graph->xaxis->SetPos("min");
     // 设置 x 轴标注文字为斜体，粗体，6号小字
-    $graph->xaxis->SetFont(FF_CHINESE, FS_NORMAL, 8);
+//    $graph->xaxis->SetFont(FF_CHINESE, FS_NORMAL, 8);
+    $graph->xaxis->SetFont(FF_CHINESE, FS_NORMAL, 10);
     // 设置 x 轴标注文字 45 度倾斜。注：前面 SetFont 必须为 FF_ARIAL
     $graph->xaxis->SetLabelAngle($angle);
 
@@ -75,7 +76,7 @@ function bar($data, $xdata, $title, $text, $color, $angle, $path='')
     $graph->xaxis->title->SetFont(FF_CHINESE);
     $graph->xaxis->title->Set("[博览财经数据提供]");
     $graph->xaxis->title->SetColor('gray@0.3:1.2');
-    $graph->xaxis->title->SetMargin(-310);
+    $graph->xaxis->title->SetMargin(-300);
     //将柱形图保存
     $graph->Stroke($path);
 }

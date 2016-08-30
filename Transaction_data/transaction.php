@@ -7,11 +7,11 @@
  * <p style="text-align: center;"><img src="http://221.232.160.243/bolanadmin/admin/uploadfile/2016/0530/20160530034622323.jpg"/></p>
  */
 //FIXME：测试环境
-//require_once 'functiondev.php';
-//$img_pre_path = "/bolanadmin/admind/admin/uploadfile/transaction/";
+require_once 'functiondev.php';
+$img_pre_path = "/bolanadmin/admind/admin/uploadfile/transaction/";
 //FIXME：正式环境
-require_once 'function.php';
-$img_pre_path = "/bolanadmin/admin/uploadfile/transaction/";
+//require_once 'function.php';
+//$img_pre_path = "/bolanadmin/admin/uploadfile/transaction/";
 
 $pre_path = "../uploadfile/transaction/";
 //header('content-type:text/html;charset=utf-8');
@@ -96,7 +96,7 @@ function trans($top, $filed1, $filed2, $filed3, $filed4, $table, $where, $order,
     if(!empty($data)) {
         //打乱数组
         $datas = array_keys($data);
-        shuffle($datas);
+//        shuffle($datas);
         foreach ($datas as $v) {
             $new_data[] = abs($data[$v]);
             $new_xdata[] = $xdata[$v];
