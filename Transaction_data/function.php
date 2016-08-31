@@ -5,12 +5,12 @@ function insert($data){
     //������ݵ�¼���̨
     foreach($data as $v){
         if(!empty($v['title']) && !empty($v['content'])) {
-            $sql = "SELECT count(*) FROM bl_news WHERE title = '" . $v['title'] . "'";
-//            $sql = "SELECT count(*) FROM bl_news WHERE title = '" . $v['title'] . "' and FROM_UNIXTIME(inputtime, '%Y-%m-%d') = '".date("Y-m-d",time())."'";
+//            $sql = "SELECT count(*) FROM bl_news WHERE title = '" . $v['title'] . "'";
+            $sql = "SELECT count(*) FROM bl_news WHERE title = '" . $v['title'] . "' and FROM_UNIXTIME(inputtime, '%Y-%m-%d') = '".date("Y-m-d",time())."'";
             $stmt = $db->query($sql);
             $num = $stmt->fetchColumn();
             $content=trim($v['content']);
-            if($num == 0) {
+//            if($num == 0) {
                 if(gettype($v['catid']) == 'integer'){
                     $db->exec("INSERT INTO `bl_news` (`id`, `catid`, `typeid`, `title`, `style`, `thumb`, `keywords`, `description`, `posids`, `url`, `listorder`, `status`, `sysadd`, `islink`, `username`, `inputtime`, `updatetime`, `uuid`, `updatestemp`, `glgg`, `sfzd`, `cw`, `yjjg`, `yjzz`, `glzt`, `classid`, `ggpj`, `titlefront`, `titleback`, `rrr`, `ispass`) VALUES (NULL, '$v[catid]', '0', '$v[title]', '', '', '', '', '0', '', '0', '', '1', '0', '', '$time', '$time', '', CURRENT_TIMESTAMP, '', '0', '0', '', '', '', '', '', '', '', '', '0')");
                     $id = $db->lastInsertId();
@@ -32,7 +32,7 @@ function insert($data){
                 }
             }
         }
-    }
+//    }
 }
 
 function viewArr($data){

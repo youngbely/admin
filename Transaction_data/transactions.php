@@ -194,7 +194,7 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph07', 'zjlxjrph', $w
  * zjlxjrph07 （流通盘比）
  * */
 $where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and zjlxjrph15>0 and zjlxjrph02 like '6%'";
-trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘沪市散户资金净流入占流通盘比排行1', '流通盘比', 'red', 'desc');
+trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘沪市散户资金净流入占流通盘比排行', '流通盘比', 'red', 'desc');
 
 /*
  * 散户动向 13(excel行号) XX日收盘沪市散户资金净流出占流通盘比排行(标题) 表：zjlxjrph(数据源较晚)
@@ -203,7 +203,7 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $w
  * zjlxjrph07 （流通盘比）
  * */
 $where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and zjlxjrph15<0 and zjlxjrph02 like '6%'";
-trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘沪市散户资金净流出占流通盘比排行1', '流通盘比', '#037000', 'asc');
+trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘沪市散户资金净流出占流通盘比排行', '流通盘比', '#037000', 'asc');
 
 /*
  * 散户动向 15(excel行号) XX日收盘深市散户资金净流入占流通盘比排行(标题) 表：zjlxjrph(数据源较晚)
@@ -212,7 +212,7 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $w
  * zjlxjrph07 （流通盘比）
  * */
 $where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and zjlxjrph15>0 and (zjlxjrph02 like '0%' or zjlxjrph02 like '3%')";
-trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘深市散户资金净流入占流通盘比排行1', '流通盘比', 'red', 'desc');
+trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘深市散户资金净流入占流通盘比排行', '流通盘比', 'red', 'desc');
 
 /*
  * 散户动向 16(excel行号) XX日收盘深市散户资金净流出占流通盘比排行(标题) 表：zjlxjrph(数据源较晚)
@@ -221,7 +221,7 @@ trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $w
  * zjlxjrph07 （流通盘比）
  * */
 $where = "zjlxjrph01 = (select max(zjlxjrph01) from zjlxjrph) and zjlxjrph15<0 and (zjlxjrph02 like '0%' or zjlxjrph02 like '3%')";
-trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘深市散户资金净流出占流通盘比排行1', '流通盘比', '#037000', 'asc');
+trans(20, 'zjlxjrph01', 'zjlxjrph02', 'zjlxjrph03', 'zjlxjrph15', 'zjlxjrph', $where, 'zjlxjrph15', $pre_path, $img_pre_path, 3787, '收盘深市散户资金净流出占流通盘比排行', '流通盘比', '#037000', 'asc');
 
 
 
