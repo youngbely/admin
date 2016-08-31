@@ -6,6 +6,7 @@ function insert($data){
     foreach($data as $v){
         if(!empty($v['title']) && !empty($v['content'])) {
             $sql = "SELECT count(*) FROM bl_news WHERE title = '" . $v['title'] . "'";
+//            $sql = "SELECT count(*) FROM bl_news WHERE title = '" . $v['title'] . "' and FROM_UNIXTIME(inputtime, '%Y-%m-%d') = '".date("Y-m-d",time())."'";
             $stmt = $db->query($sql);
             $num = $stmt->fetchColumn();
             $content=trim($v['content']);

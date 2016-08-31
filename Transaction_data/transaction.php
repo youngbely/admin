@@ -11,7 +11,7 @@
 //$img_pre_path = "/bolanadmin/admind/admin/uploadfile/transaction/";
 //FIXME：正式环境
 require_once 'function.php';
-$img_pre_path = "/bolanadmin/admin/uploadfile/transaction/";
+$img_pre_path = "http://221.232.160.243/bolanadmin/admin/uploadfile/transaction/";
 
 $pre_path = "../uploadfile/transaction/";
 //header('content-type:text/html;charset=utf-8');
