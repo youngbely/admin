@@ -160,17 +160,15 @@ class admin_announce extends admin {
         }if(in_array($type, array(16, 17))){
             $words = "（每周二出刊）";
         }
-        $isMade =0;
         if(in_array($type, array(0,1,3))){
             include template('announce', 'template0');
-        }elseif($type>=20 && $type<=41){
-            include template('announce', 'template44');
-            $isMade =1;
-        }elseif($type ==19){
-	        include template('announce', 'template19');
-	    }else{
-	        include template('announce', 'template1');
-	    }
+        }else{
+            if($type ==19){
+	            include template('announce', 'template19');
+	        }else{
+	            include template('announce', 'template1');
+	        }
+        }
         $centent=ob_get_contents();
         ob_end_clean();
 
@@ -179,30 +177,29 @@ class admin_announce extends admin {
         file_put_contents($rkPath.$fileName, $centent);
 
         //ftp0
-        if(!$isMade){
-            $conn = ftp_connect("172.16.94.240") or die("Could not connect 0");
-            if($conn){
-                $login_result = ftp_login($conn,"new","123456");
-                if($login_result){
-                    if(ftp_put($conn,$fileName,$rkPath.$fileName,FTP_ASCII)){
-    
-                    }
-                    else{
-                        echo "221发布失败！";
-                        exit;
-                    }
-                }else{
-                    echo "221ftp服务器登录失败！";
+        $conn = ftp_connect("172.16.94.240") or die("Could not connect");
+        if($conn){
+            $login_result = ftp_login($conn,"new","123456");
+            if($login_result){
+                if(ftp_put($conn,$fileName,$rkPath.$fileName,FTP_ASCII)){
+
+                }
+                else{
+                    echo "221发布失败！";
                     exit;
                 }
-                ftp_close($conn);
             }else{
-                echo "221ftp服务器连接失败！";
+                echo "221ftp服务器登录失败！";
                 exit;
             }
+            ftp_close($conn);
+        }else{
+            echo "221ftp服务器连接失败！";
+            exit;
         }
+
         //ftp1
-        $conn = ftp_connect("58.49.110.232") or die("Could not connect 1");
+        $conn = ftp_connect("58.49.110.232") or die("Could not connect");
         if($conn){
             $login_result=ftp_login($conn,"new","123456");
             if($login_result){
@@ -224,7 +221,7 @@ class admin_announce extends admin {
         }
 
         //ftp2
-        $conn = ftp_connect("172.16.94.233") or die("Could not connect 2");
+        $conn = ftp_connect("172.16.94.233") or die("Could not connect");
         if($conn){
             $login_result=ftp_login($conn,"new","123456");
             if($login_result){
@@ -284,9 +281,7 @@ class admin_announce extends admin {
         $typeinfo = $this->getTypeInfo($type);
         $tempplateName = in_array($type, array(0,1,3)) ? 'template0' : 'template1';
         if($type ==19){
-        	$tempplateName='template19';
-        }elseif($type>=20 && $type<=41){
-             $tempplateName='template44';
+            $tempplateName='template19';
         }
         if(in_array($type, array(0,4,12,14,15))){
             $words = "（与您相约每周一、周三、周五）";

@@ -35,7 +35,7 @@ return array (
          ///////////////////////////外包////////////////////////////////////////////////
         array("classId"=>"C5500","lefttitle"=>"","righttitle"=>"","template"=>"template19.html","title"=>"与庄共舞"),//19与庄共舞
         array("classId"=>"C5564","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"国策精研"),//20国策精研
-        array("classId"=>"C5566","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"战略配置内参"),//21战略配置内参
+        array("classId"=>"C5566","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"宏观研究（资产配置）"),//21宏观研究（资产配置）
         array("classId"=>"C5568","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"行业主题研究"),//22行业主题研究
         array("classId"=>"C5570","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"专题研究报告"),//23专题研究报告
         array("classId"=>"C5572","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"大事速评"),//24大事速评
@@ -43,8 +43,8 @@ return array (
         array("classId"=>"C5576","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"VIP服务计划书"),//26VIP服务计划书
         array("classId"=>"C5578","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"操盘计划"),//27操盘计划
         array("classId"=>"C5580","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"主题投资"),//28主题投资
-        array("classId"=>"C5582","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"策马扬鞭（周）"),//29策马扬鞭（周）
-        array("classId"=>"C5584","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"策马扬鞭（月）"),//30策马扬鞭（月）
+        array("classId"=>"C5582","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"策马扬鞭（周策略）"),//29策马扬鞭（周策略）
+        array("classId"=>"C5584","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"策马扬鞭（月策略）"),//30策马扬鞭（月策略）
         array("classId"=>"C5586","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"盘前早知道"),//31盘前早知道
         array("classId"=>"C5588","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"晨报速递"),//32晨报速递
         array("classId"=>"C5590","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"涨停板预测"),//33涨停板预测
@@ -55,7 +55,7 @@ return array (
         array("classId"=>"C5600","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"分级每日报"),//38分级每日报
         array("classId"=>"C5602","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"分级晚汇报"),//39分级晚汇报
         array("classId"=>"C5604","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"券商客户服务内刊"),//40券商客户服务内刊
-        array("classId"=>"C5631","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"投资组合"),//41投资组合
+
     ),
 );
 

@@ -317,5 +317,19 @@ return array (
     'installdate' => '2015-04-14',
     'updatedate' => '2015-04-14',
   ),
+  'dhyb' => 
+  array (
+    'module' => 'dhyb',
+    'name' => '大行研报',
+    'url' => '',
+    'iscore' => '0',
+    'version' => '1.0',
+    'description' => '大行研报',
+    'setting' => '',
+    'listorder' => '0',
+    'disabled' => '0',
+    'installdate' => '2016-10-10',
+    'updatedate' => '2016-10-10',
+  ),
 );
 ?>

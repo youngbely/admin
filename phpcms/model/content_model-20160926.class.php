@@ -218,7 +218,7 @@ class content_model extends model {
         $this->update($systeminfo,array('id'=>$id));
 
 
-       //$modelinfo['content']=str_replace(array('<p><br/></p>','<br/>'),' ',$modelinfo['content']);
+        $modelinfo['content']=str_replace(array('<p><br/></p>','<br/>'),' ',$modelinfo['content']);
         $modelinfo['content']=str_replace(array('<p style="white-space: normal; text-indent: 2em;">','<p style="text-indent: 2em; text-align: left;">'),'<p>	',$modelinfo['content']);
         
         //附属表

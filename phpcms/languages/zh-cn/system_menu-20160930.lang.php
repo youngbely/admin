@@ -510,7 +510,6 @@ $LANG['cpdx37'] = '操盘短信';
 $LANG['mrzhb38'] = '分级每日报';
 $LANG['mrwhb39'] = '分级晚汇报';
 $LANG['qskhfwnk40'] = '券商客户服务内刊';
-$LANG['tzzh41'] = '投资组合';
 $LANG['znzq'] = '智能抓取';
 $LANG['zxzx'] = '在线资讯';
 $LANG['zxgl'] = '资讯管理';

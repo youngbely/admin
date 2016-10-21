@@ -55,7 +55,7 @@ return array (
         array("classId"=>"C5600","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"分级每日报"),//38分级每日报
         array("classId"=>"C5602","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"分级晚汇报"),//39分级晚汇报
         array("classId"=>"C5604","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"券商客户服务内刊"),//40券商客户服务内刊
-        array("classId"=>"C5631","lefttitle"=>"","righttitle"=>"","template"=>"template44.html","title"=>"投资组合"),//41投资组合
+
     ),
 );
 

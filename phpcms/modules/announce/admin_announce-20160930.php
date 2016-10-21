@@ -163,7 +163,7 @@ class admin_announce extends admin {
         $isMade =0;
         if(in_array($type, array(0,1,3))){
             include template('announce', 'template0');
-        }elseif($type>=20 && $type<=41){
+        }elseif($type>=20 && $type<=40){
             include template('announce', 'template44');
             $isMade =1;
         }elseif($type ==19){
@@ -285,7 +285,7 @@ class admin_announce extends admin {
         $tempplateName = in_array($type, array(0,1,3)) ? 'template0' : 'template1';
         if($type ==19){
         	$tempplateName='template19';
-        }elseif($type>=20 && $type<=41){
+        }elseif($type>=20 && $type<=40){
              $tempplateName='template44';
         }
         if(in_array($type, array(0,4,12,14,15))){
